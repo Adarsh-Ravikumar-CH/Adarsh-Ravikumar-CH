@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Adarsh Ravikumar — Mechanical Engineering, EPFL</title>
+<meta name="description" content="Portfolio of Adarsh Ravikumar, Mechanical Engineering student at EPFL. Mars rover, squash ball launcher and more." />
+<meta name="theme-color" content="#ffffff" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="logo"><span class="logo-mark" aria-hidden="true"></span>Adarsh Ravikumar</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#more">More about me</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container">
+      <p class="eyebrow">Portfolio <span class="red">/</span> 2026</p>
+      <h1 class="hero-name">Adarsh<br />Ravikumar<span class="red">.</span></h1>
+      <div class="hero-meta">
+        <div>
+          <span class="label">Studying</span>
+          <span>BSc Mechanical Engineering, 3rd year</span>
+        </div>
+        <div>
+          <span class="label">School</span>
+          <span>EPFL, Switzerland</span>
+        </div>
+        <div>
+          <span class="label">Based in</span>
+          <span>Lausanne</span>
+        </div>
+        <div>
+          <span class="label">Interests</span>
+          <span>Mechanical design, robotics, mechanisms</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 ABOUT -->
+  <section class="section" id="about">
+    <div class="container grid">
+      <header class="section-head">
+        <span class="section-num">01</span>
+        <h2>About</h2>
+      </header>
+      <div class="section-body">
+        <p class="about-text">Hi, I'm Adarsh a Swiss student studying Mechanical Engineering at EPFL, fueled by banana bread, curiosity, and a genuine love for anything involving gears, wires, or a good engineering puzzle. When I'm not deep in lecture notes or problem sets, you'll usually find me tinkering with a new project or convincing myself that “just one more design iteration” is a perfectly reasonable use of time. Welcome to my portfolio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container grid">
+      <header class="section-head">
+        <span class="section-num">02</span>
+        <h2>Projects</h2>
+      </header>
+
+      <div class="section-body">
+
+        <!-- Mars Rover -->
+        <article class="project" id="rover">
+          <div class="project-title-row">
+            <span class="project-index">02.1</span>
+            <h3>Mars Rover</h3>
+            <span class="project-year">2025–26</span>
+          </div>
+
+          <figure class="project-cover">
+            <img src="assets/img/rover-2.jpg" alt="Adarsh, in a blue sweater, drilling an aluminium profile clamped in a bench vice" width="1600" height="1200" />
+          </figure>
+
+          <div class="project-info">
+            <p class="project-lede">A student-built Mars rover for the XRC competition. It had to find its own way, climb over rocks and handle slopes, then pick up samples with its own arm. We took it from blank page to competition day.</p>
+            <dl class="facts">
+              <div><dt>Period</dt><dd>Oct 2025 – May 2026</dd></div>
+              <div><dt>Context</dt><dd>XRC competition team</dd></div>
+              <div><dt>Highlights</dt><dd>Rocker-bogie suspension, 5-axis arm</dd></div>
+              <div><dt>Tools</dt><dd>Fusion 360, 3D printing, laser cutting, welding</dd></div>
+            </dl>
+          </div>
+
+          <button class="toggle" type="button" aria-expanded="false" aria-controls="rover-details">
+            <span class="toggle-label">Read more</span>
+            <span class="toggle-icon" aria-hidden="true"></span>
+          </button>
+
+          <div class="project-details" id="rover-details" hidden>
+            <ol class="points">
+              <li>
+                <h4>The brief</h4>
+                <p>A multidisciplinary team, one rover. It had to navigate autonomously, get over obstacles and hold its own on steep inclines. I co-designed it from the first concept to the prototype we took to competition.</p>
+              </li>
+              <li>
+                <h4>Drivetrain &amp; wheels</h4>
+                <p>I worked out motor torque, speed and power against obstacle size, approach angle and slope, so we knew the drivetrain would cope before anything was built. The tyres are custom PTU, iterated through several tread designs to balance stiffness and grip on rocky ground.</p>
+              </li>
+              <li>
+                <h4>Suspension</h4>
+                <p>A rocker-bogie differential keeps every wheel on the ground when one side climbs, so the rover stays stable over uneven terrain.</p>
+              </li>
+              <li>
+                <h4>The arm</h4>
+                <p>A 5-axis arm for collecting and handling samples. I covered the kinematics, picked the actuators and designed the mechanism.</p>
+              </li>
+              <li>
+                <h4>Chassis</h4>
+                <p>Designed together with the electrical and software teams. The LIDAR, sensors and computer each needed a proper home, and the layout had to work for everyone.</p>
+              </li>
+              <li>
+                <h4>Making it real</h4>
+                <p>The whole rover was modelled, assembled and simulated in Fusion 360, then built with 3D printing, laser cutting and welding into a working machine.</p>
+              </li>
+            </ol>
+
+            <div class="gallery">
+              <figure><button class="gallery-item" type="button"><img src="assets/img/rover-2.jpg" alt="Drilling an aluminium profile in the workshop" loading="lazy" /></button><figcaption>In the workshop</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/rover-1.jpg" alt="Two team members crouched beside the finished rover" loading="lazy" /></button><figcaption>The finished rover</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/rover-3.jpg" alt="Robotic arm joints and turntable during testing" loading="lazy" /></button><figcaption>Arm joints during testing</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/rover-4.jpg" alt="Rover with the arm folded and electronics visible" loading="lazy" /></button><figcaption>Arm folded, electronics exposed</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/rover-5.jpg" alt="A teammate working on the rover chassis" loading="lazy" /></button><figcaption>Chassis on the bench</figcaption></figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- Squash Ball Launcher -->
+        <article class="project" id="squash">
+          <div class="project-title-row">
+            <span class="project-index">02.2</span>
+            <h3>Squash Ball Launcher</h3>
+            <span class="project-year">2025</span>
+          </div>
+
+          <figure class="project-cover is-render">
+            <img src="assets/img/squash-1.jpg" alt="Render of the squash ball launcher: a glass-sided box with a hand crank on top" width="1600" height="1292" />
+          </figure>
+
+          <div class="project-info">
+            <p class="project-lede">No motor and no battery. You turn a crank, a gear train stores the energy, and the machine fires squash balls at up to <strong class="red">110&nbsp;km/h</strong>.</p>
+            <dl class="facts">
+              <div><dt>Period</dt><dd>Feb – Jun 2025</dd></div>
+              <div><dt>Context</dt><dd>EPFL semester project</dd></div>
+              <div><dt>Top speed</dt><dd>110 km/h, fully mechanical</dd></div>
+              <div><dt>Tools</dt><dd>CATIA, CNC milling &amp; turning, GD&amp;T</dd></div>
+            </dl>
+          </div>
+
+          <button class="toggle" type="button" aria-expanded="false" aria-controls="squash-details">
+            <span class="toggle-label">Read more</span>
+            <span class="toggle-icon" aria-hidden="true"></span>
+          </button>
+
+          <div class="project-details" id="squash-details" hidden>
+            <ol class="points">
+              <li>
+                <h4>The idea</h4>
+                <p>A fully mechanical, hand-wound launcher, designed from the ground up. Winding the crank stores energy in the mechanism, and releasing it sends a ball out at up to 110&nbsp;km/h.</p>
+              </li>
+              <li>
+                <h4>The numbers</h4>
+                <p>Torque, force, velocity and energy-transfer calculations sized every gear and shaft, so each shot comes out the same as the last.</p>
+              </li>
+              <li>
+                <h4>Materials</h4>
+                <p>Winding and firing put cyclic load on the gears, over and over. I chose materials for yield strength, fatigue resistance, hardness and wear so the parts would last.</p>
+              </li>
+              <li>
+                <h4>Built to be built</h4>
+                <p>Every part was designed with manufacturing in mind, mostly CNC milling and turning, so the drawings could go straight to a workshop.</p>
+              </li>
+              <li>
+                <h4>The paper trail</h4>
+                <p>A full documentation package: design justification, gear ratio and energy calculations, a bill of materials, and manufacture-ready 2D drawings with GD&amp;T.</p>
+              </li>
+              <li>
+                <h4>All in CATIA</h4>
+                <p>3D modelling, assembly and mechanism simulation, and drawing generation, all done in CATIA from start to finish.</p>
+              </li>
+            </ol>
+
+            <div class="gallery">
+              <figure><button class="gallery-item" type="button"><img src="assets/img/squash-1.jpg" alt="Final render of the launcher" loading="lazy" /></button><figcaption>Final render</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/squash-2.jpg" alt="Transparent render showing the gears inside the launcher" loading="lazy" /></button><figcaption>See-through render</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/squash-3.jpg" alt="Isometric CAD view of the complete mechanism" loading="lazy" /></button><figcaption>Complete mechanism</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/squash-5.jpg" alt="Crank handle connected to the first gear stages" loading="lazy" /></button><figcaption>Crank and first stages</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/squash-4.jpg" alt="Top view of the gear train and launch wheels" loading="lazy" /></button><figcaption>Gear train from above</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/squash-6.jpg" alt="Counter-rotating launch wheels driven by gears" loading="lazy" /></button><figcaption>Counter-rotating launch wheels</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/squash-7.jpg" alt="Close-up of meshing gear pairs" loading="lazy" /></button><figcaption>Gear pairs</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/squash-8.jpg" alt="Exploded view of all shaft assemblies" loading="lazy" /></button><figcaption>Every shaft assembly</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/squash-9.jpg" alt="Ball feed rail mechanism" loading="lazy" /></button><figcaption>Ball feed rail</figcaption></figure>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 SKILLS -->
+  <section class="section" id="skills">
+    <div class="container grid">
+      <header class="section-head">
+        <span class="section-num">03</span>
+        <h2>Skills</h2>
+      </header>
+      <div class="section-body">
+        <div class="skills">
+          <div>
+            <h3>Design &amp; simulation</h3>
+            <ul><li>CATIA</li><li>Fusion 360</li></ul>
+          </div>
+          <div>
+            <h3>Manufacturing</h3>
+            <ul><li>3D printing</li><li>Laser cutting</li><li>Welding</li></ul>
+          </div>
+          <div>
+            <h3>Programming</h3>
+            <ul><li>Python</li><li>C</li><li>MATLAB</li><li>LaTeX</li></ul>
+          </div>
+          <div>
+            <h3>People</h3>
+            <ul><li>Leadership</li><li>Negotiation</li><li>Public speaking</li><li>Cross-functional teams</li></ul>
+          </div>
+        </div>
+
+        <div class="education">
+          <span class="label">Education</span>
+          <p><strong>EPFL</strong> — BSc Mechanical Engineering</p>
+          <span class="education-date">Sep 2024 – Jun 2027</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 MORE ABOUT ME -->
+  <section class="section" id="more">
+    <div class="container grid">
+      <header class="section-head">
+        <span class="section-num">04</span>
+        <h2>More about me</h2>
+      </header>
+      <div class="section-body">
+        <button class="more-toggle" type="button" aria-expanded="false" aria-controls="more-panel">
+          <span>Want to know more about me?</span>
+          <span class="toggle-icon is-large" aria-hidden="true"></span>
+        </button>
+        <p class="more-hint">Theatre, partnerships and cricket.</p>
+
+        <div class="personal" id="more-panel" hidden>
+          <article>
+            <span class="personal-num">04.1</span>
+            <h3>On stage</h3>
+            <p class="personal-meta">PLUME · Sep 2025 – May 2026</p>
+            <p>With PLUME I performed live in front of 200 paying audience members. That meant weeks of rehearsals with the cast and crew, lines memorised down to the pauses, and taking the director's notes one night and using them the next.</p>
+            <p>When something goes off-script on stage, you adjust on the spot and keep going.</p>
+          </article>
+          <article>
+            <span class="personal-num">04.2</span>
+            <h3>Partnerships</h3>
+            <p class="personal-meta">EPFL AI Team · Feb 2026 – now</p>
+            <p>I handle partnerships for the EPFL AI Team. I find companies that care about what we build, pitch to them, negotiate sponsorship terms and keep those relationships going.</p>
+            <p>A lot of the job is turning what our technical leads need into something a partner actually wants to back, whether that's funding, hardware or both.</p>
+          </article>
+          <article>
+            <span class="personal-num">04.3</span>
+            <h3>Cricket</h3>
+            <p class="personal-meta">Off the clock</p>
+            <!-- write your cricket story here -->
+            <p>More on this soon.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 CONTACT -->
+  <section class="section" id="contact">
+    <div class="container grid">
+      <header class="section-head">
+        <span class="section-num">05</span>
+        <h2>Contact</h2>
+      </header>
+      <div class="section-body">
+        <p class="contact-intro">Open to internships, projects and a good engineering conversation.</p>
+        <a class="contact-email" href="mailto:adarshravikumar@yahoo.com">adarshravikumar@yahoo.com</a>
+        <dl class="contact-list">
+          <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/adarsh-ravikumar-80130035a" target="_blank" rel="noopener">adarsh-ravikumar ↗</a></dd></div>
+          <div><dt>Location</dt><dd>Lausanne, Switzerland</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 Adarsh Ravikumar</span>
+    <span>EPFL · Lausanne</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<!-- image viewer -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <div class="lightbox-bar">
+    <span class="lightbox-count" id="lightbox-count"></span>
+    <button class="lightbox-close" id="lightbox-close" type="button">Close</button>
+  </div>
+  <figure class="lightbox-figure">
+    <img id="lightbox-img" alt="" />
+    <figcaption id="lightbox-cap"></figcaption>
+  </figure>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">←</button>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Next image">→</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
