@@ -438,6 +438,171 @@ p { margin: 0; }
 #rover .gallery figure:nth-child(4) img { object-position: 50% 85%; }
 #rover .gallery figure:nth-child(5) img { object-position: 50% 62%; }
 
+#drone .project-cover img { object-position: 50% 62%; }
+
+/* ---------- Hackathons (the door into the CRT page) ---------- */
+
+.hack-intro {
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  line-height: 1.45;
+  letter-spacing: -.012em;
+  max-width: 32em;
+}
+
+.crt-door {
+  display: block;
+  margin-top: 40px;
+  text-decoration: none;
+  color: #ff3a2d;
+}
+
+.crt-door-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: clamp(230px, 30vw, 380px);
+  padding: clamp(20px, 3vw, 36px);
+  background: radial-gradient(ellipse at 50% 40%, #1f0b09 0%, #070404 75%);
+  border-radius: 14px;
+  box-shadow: inset 0 0 70px rgba(0, 0, 0, .85);
+  overflow: hidden;
+  font-family: "VT323", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  text-transform: uppercase;
+}
+
+/* scanlines */
+.crt-door-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, .32) 3px, rgba(0, 0, 0, .32) 4px);
+  pointer-events: none;
+}
+
+.crt-door-line {
+  font-size: 1.25rem;
+  letter-spacing: .08em;
+  color: #a97a72;
+}
+
+.crt-door-title {
+  font-size: clamp(3.2rem, 11vw, 9rem);
+  line-height: .85;
+  white-space: nowrap;
+  text-shadow:
+    2px 0 0 rgba(0, 229, 255, .38),
+    -2px 0 0 rgba(255, 176, 0, .42),
+    0 0 16px rgba(255, 58, 45, .65),
+    0 0 50px rgba(255, 58, 45, .3);
+}
+
+.crt-door-cursor {
+  display: inline-block;
+  width: .32em;
+  height: .5em;
+  margin-left: .1em;
+  background: currentColor;
+  box-shadow: 0 0 14px rgba(255, 58, 45, .7);
+  animation: crt-blink 1s steps(1) infinite;
+}
+
+.crt-door-enter {
+  align-self: flex-end;
+  font-size: 1.3rem;
+  letter-spacing: .08em;
+  color: #f3d9d2;
+}
+
+.crt-door:hover .crt-door-enter,
+.crt-door:focus-visible .crt-door-enter { color: #fff; text-shadow: 0 0 10px rgba(255, 255, 255, .6); }
+
+.crt-door:hover .crt-door-title { animation: crt-jitter .28s steps(1) 1; }
+
+@keyframes crt-blink { 50% { opacity: 0; } }
+
+@keyframes crt-jitter {
+  0%, 100% { transform: none; }
+  25% { transform: translateX(-6px) skewX(-8deg); }
+  50% { transform: translateX(5px) skewX(5deg); }
+  75% { transform: translateX(-2px); }
+}
+
+/* the door screen growing to fill the window */
+.crt-zoom {
+  position: fixed;
+  z-index: 200;
+  background: #070404;
+  border-radius: 14px;
+  transition:
+    top .5s cubic-bezier(.7, 0, .2, 1),
+    left .5s cubic-bezier(.7, 0, .2, 1),
+    width .5s cubic-bezier(.7, 0, .2, 1),
+    height .5s cubic-bezier(.7, 0, .2, 1),
+    border-radius .5s linear;
+}
+
+.crt-zoom.is-full {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  border-radius: 0;
+}
+
+/* the page switching off like an old TV: collapses to a line, then a dot */
+.tv {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.tv-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: #070404;
+}
+
+.tv-bar--top { top: 0; }
+
+.tv-bar--bottom { bottom: 0; }
+
+.tv-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  margin-top: -1px;
+  background: #fff;
+  box-shadow: 0 0 12px 2px rgba(255, 255, 255, .9), 0 0 44px 8px rgba(227, 6, 19, .65);
+  opacity: 0;
+}
+
+.tv.is-off .tv-bar { animation: tv-close .3s cubic-bezier(.6, 0, .9, .4) forwards; }
+
+.tv.is-off .tv-line { animation: tv-line .62s linear forwards; }
+
+html.from-crt .tv-bar { animation: tv-open .5s .06s cubic-bezier(.2, .7, .2, 1) both; }
+
+@keyframes tv-close { to { height: calc(50% + 1px); } }
+
+@keyframes tv-open {
+  from { height: calc(50% + 1px); }
+  to { height: 0; }
+}
+
+@keyframes tv-line {
+  0%, 38% { opacity: 0; transform: scaleX(1); }
+  48% { opacity: 1; transform: scaleX(1); }
+  82% { opacity: 1; transform: scaleX(.004); }
+  100% { opacity: 0; transform: scaleX(.004); }
+}
+
 /* ---------- Skills ---------- */
 
 .skills {
@@ -789,4 +954,9 @@ p { margin: 0; }
   *,
   *::before,
   *::after { transition: none !important; }
+
+  .crt-door-cursor,
+  .crt-door:hover .crt-door-title,
+  .tv-bar,
+  .tv-line { animation: none !important; }
 }

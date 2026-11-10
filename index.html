@@ -4,14 +4,26 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Adarsh Ravikumar — Mechanical Engineering, EPFL</title>
-<meta name="description" content="Portfolio of Adarsh Ravikumar, Mechanical Engineering student at EPFL. Mars rover, squash ball launcher and more." />
+<meta name="description" content="Portfolio of Adarsh Ravikumar, Mechanical Engineering student at EPFL. Drone, Mars rover, squash ball launcher, hackathons and more." />
 <meta name="theme-color" content="#ffffff" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=3" />
+<script>
+  // arriving back from the hackathons page: start behind the closed "screen" so it can open
+  try {
+    if (sessionStorage.getItem('crt-return')) {
+      sessionStorage.removeItem('crt-return');
+      document.documentElement.classList.add('from-crt');
+    }
+  } catch (e) {}
+</script>
 </head>
 <body>
+
+<!-- the switch-off effect used when entering / leaving the hackathons page -->
+<div class="tv" aria-hidden="true"><span class="tv-bar tv-bar--top"></span><span class="tv-bar tv-bar--bottom"></span><span class="tv-line"></span></div>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -22,6 +34,7 @@
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="hackathons.html" data-section="#hackathons" data-crt-link>Hackathons</a>
       <a href="#skills">Skills</a>
       <a href="#more">More about me</a>
       <a href="#contact">Contact</a>
@@ -43,15 +56,15 @@
         </div>
         <div>
           <span class="label">School</span>
-          <span>EPFL, Switzerland</span>
+          <span>EPFL, Lausanne</span>
         </div>
         <div>
-          <span class="label">Based in</span>
-          <span>Lausanne</span>
+          <span class="label">Currently</span>
+          <span>Mechanical drone lead</span>
         </div>
         <div>
           <span class="label">Interests</span>
-          <span>Mechanical design, robotics, mechanisms</span>
+          <span>Mechanical design, robotics, Computer vision</span>
         </div>
       </div>
     </div>
@@ -80,10 +93,65 @@
 
       <div class="section-body">
 
+        <!-- Drone -->
+        <article class="project" id="drone">
+          <div class="project-title-row">
+            <span class="project-index">02.1</span>
+            <h3>Drone</h3>
+            <span class="project-year">2026–now</span>
+          </div>
+
+          <figure class="project-cover">
+            <img src="assets/img/drone-1.jpg" alt="Drone electronics laid out on laser-cut test plates: a Jetson baseboard with a Pixhawk 6X, a power board, a 4-in-1 ESC and a UBEC" width="1152" height="1610" />
+          </figure>
+
+          <div class="project-info">
+            <p class="project-lede">I lead the mechanical design of a quadcopter that carries its own computer and sensors: a Pixhawk flight controller, an NVIDIA Jetson and two LIDARs. My job is the frame, and making everything fit on it.</p>
+            <dl class="facts">
+              <div><dt>Period</dt><dd>2026 – now</dd></div>
+              <div><dt>Role</dt><dd><strong class="red">Mechanical lead</strong></dd></div>
+              <div><dt>On board</dt><dd>Pixhawk 6X, NVIDIA Jetson, two LIDARs</dd></div>
+              <div><dt>Status</dt><dd>In development</dd></div>
+            </dl>
+          </div>
+
+          <button class="toggle" type="button" aria-expanded="false" aria-controls="drone-details">
+            <span class="toggle-label">Read more</span>
+            <span class="toggle-icon" aria-hidden="true"></span>
+          </button>
+
+          <div class="project-details" id="drone-details" hidden>
+            <ol class="points">
+              <li>
+                <h4>The role</h4>
+                <p>As mechanical lead I'm responsible for the airframe: the central body, the arms, and the mounts for every board and sensor.</p>
+              </li>
+              <li>
+                <h4>The frame</h4>
+                <p>A compact central body holds the Jetson, with two LIDAR mounts at one end and four tube arms carrying the motors.</p>
+              </li>
+              <li>
+                <h4>Prototyping the layout</h4>
+                <p>Before committing to the final plates, we laser-cut test plates and laid the electronics out on them to check spacing, mounting holes and cable runs.</p>
+              </li>
+              <li>
+                <h4>Power &amp; electronics</h4>
+                <p>Two batteries feed a power board, which supplies a 4-in-1 ESC for the four motors and a regulated supply for the flight controller and computer. The frame has to give each of them a place and keep the wiring short.</p>
+              </li>
+            </ol>
+
+            <div class="gallery">
+              <figure><button class="gallery-item" type="button"><img src="assets/img/drone-1.jpg" alt="Drone electronics laid out on laser-cut test plates" loading="lazy" /></button><figcaption>Electronics on laser-cut test plates</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/drone-2.jpg" alt="CAD model of the drone frame with a Jetson bay, two LIDAR mounts and four tube arms" loading="lazy" /></button><figcaption>Frame CAD: Jetson bay, LIDAR mounts, four arms</figcaption></figure>
+              <figure><button class="gallery-item" type="button"><img src="assets/img/drone-3.jpg" alt="Wiring diagram linking two batteries, the power board, ESC, four motors, Pixhawk and Jetson" loading="lazy" /></button><figcaption>Wiring diagram</figcaption></figure>
+            </div>
+          </div>
+        </article>
+
         <!-- Mars Rover -->
         <article class="project" id="rover">
           <div class="project-title-row">
-            <span class="project-index">02.1</span>
+            <span class="project-index">02.2</span>
             <h3>Mars Rover</h3>
             <span class="project-year">2025–26</span>
           </div>
@@ -148,7 +216,7 @@
         <!-- Squash Ball Launcher -->
         <article class="project" id="squash">
           <div class="project-title-row">
-            <span class="project-index">02.2</span>
+            <span class="project-index">02.3</span>
             <h3>Squash Ball Launcher</h3>
             <span class="project-year">2025</span>
           </div>
@@ -218,11 +286,32 @@
     </div>
   </section>
 
-  <!-- 03 SKILLS -->
-  <section class="section" id="skills">
+  <!-- 03 HACKATHONS -->
+  <section class="section" id="hackathons">
     <div class="container grid">
       <header class="section-head">
         <span class="section-num">03</span>
+        <h2>Hackathons</h2>
+      </header>
+      <div class="section-body">
+        <p class="hack-intro">Short deadlines, a team and something working by the end. The full log lives on its own screen.</p>
+
+        <a class="crt-door" href="hackathons.html" data-crt-link aria-label="Open the hackathon log">
+          <span class="crt-door-screen">
+            <span class="crt-door-line">&gt; Hackathon_log.exe</span>
+            <span class="crt-door-title">Hackathons<span class="crt-door-cursor"></span></span>
+            <span class="crt-door-enter">Press to enter →</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 SKILLS -->
+  <section class="section" id="skills">
+    <div class="container grid">
+      <header class="section-head">
+        <span class="section-num">04</span>
         <h2>Skills</h2>
       </header>
       <div class="section-body">
@@ -254,11 +343,11 @@
     </div>
   </section>
 
-  <!-- 04 MORE ABOUT ME -->
+  <!-- 05 MORE ABOUT ME -->
   <section class="section" id="more">
     <div class="container grid">
       <header class="section-head">
-        <span class="section-num">04</span>
+        <span class="section-num">05</span>
         <h2>More about me</h2>
       </header>
       <div class="section-body">
@@ -270,21 +359,21 @@
 
         <div class="personal" id="more-panel" hidden>
           <article>
-            <span class="personal-num">04.1</span>
+            <span class="personal-num">05.1</span>
             <h3>On stage</h3>
             <p class="personal-meta">PLUME · Sep 2025 – May 2026</p>
             <p>With PLUME I performed live in front of 200 paying audience members. That meant weeks of rehearsals with the cast and crew, lines memorised down to the pauses, and taking the director's notes one night and using them the next.</p>
             <p>When something goes off-script on stage, you adjust on the spot and keep going.</p>
           </article>
           <article>
-            <span class="personal-num">04.2</span>
+            <span class="personal-num">05.2</span>
             <h3>Partnerships</h3>
             <p class="personal-meta">EPFL AI Team · Feb 2026 – now</p>
             <p>I handle partnerships for the EPFL AI Team. I find companies that care about what we build, pitch to them, negotiate sponsorship terms and keep those relationships going.</p>
             <p>A lot of the job is turning what our technical leads need into something a partner actually wants to back, whether that's funding, hardware or both.</p>
           </article>
           <article>
-            <span class="personal-num">04.3</span>
+            <span class="personal-num">05.3</span>
             <h3>Cricket</h3>
             <p class="personal-meta">Off the clock</p>
             <!-- write your cricket story here -->
@@ -295,11 +384,11 @@
     </div>
   </section>
 
-  <!-- 05 CONTACT -->
+  <!-- 06 CONTACT -->
   <section class="section" id="contact">
     <div class="container grid">
       <header class="section-head">
-        <span class="section-num">05</span>
+        <span class="section-num">06</span>
         <h2>Contact</h2>
       </header>
       <div class="section-body">
@@ -337,6 +426,6 @@
   <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Next image">→</button>
 </div>
 
-<script src="main.js"></script>
+<script src="main.js?v=3"></script>
 </body>
 </html>

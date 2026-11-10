@@ -1,4 +1,6 @@
 (function () {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // ---------- mobile menu ----------
   const menuBtn = document.querySelector('.menu-toggle');
   const nav = document.getElementById('site-nav');
@@ -18,9 +20,11 @@
   });
 
   // ---------- highlight the section in view ----------
+  // a link that leaves the page (Hackathons) names its section in data-section
   const navLinks = [...nav.querySelectorAll('a')];
+  const targetOf = link => link.dataset.section || link.getAttribute('href');
   const sections = navLinks
-    .map(link => document.querySelector(link.getAttribute('href')))
+    .map(link => (targetOf(link).startsWith('#') ? document.querySelector(targetOf(link)) : null))
     .filter(Boolean);
 
   if ('IntersectionObserver' in window) {
@@ -28,13 +32,63 @@
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         navLinks.forEach(link => {
-          link.classList.toggle('is-active', link.getAttribute('href') === '#' + entry.target.id);
+          link.classList.toggle('is-active', targetOf(link) === '#' + entry.target.id);
         });
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
 
     sections.forEach(section => observer.observe(section));
   }
+
+  // ---------- into the CRT: the hackathons page ----------
+  const tv = document.querySelector('.tv');
+  let leaving = false;
+
+  // from the nav: the page collapses to a line and a dot, like a TV switching off
+  function switchOff(url) {
+    tv.classList.add('is-off');
+    setTimeout(() => { window.location.href = url; }, 640);
+  }
+
+  // from the black screen in the Hackathons section: that screen grows to fill the window
+  function zoomInto(screen, url) {
+    const r = screen.getBoundingClientRect();
+    const zoom = document.createElement('div');
+    zoom.className = 'crt-zoom';
+    zoom.style.top = r.top + 'px';
+    zoom.style.left = r.left + 'px';
+    zoom.style.width = r.width + 'px';
+    zoom.style.height = r.height + 'px';
+    document.body.appendChild(zoom);
+    requestAnimationFrame(() => requestAnimationFrame(() => zoom.classList.add('is-full')));
+    setTimeout(() => { window.location.href = url; }, 560);
+  }
+
+  document.querySelectorAll('a[data-crt-link]').forEach(link => {
+    link.addEventListener('click', e => {
+      if (reduceMotion || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      e.preventDefault();
+      if (leaving) return;
+      leaving = true;
+      const screen = link.querySelector('.crt-door-screen');
+      if (screen) zoomInto(screen, link.href);
+      else switchOff(link.href);
+    });
+  });
+
+  // back from the hackathons page: the opening animation is CSS-only, this just tidies up
+  if (document.documentElement.classList.contains('from-crt')) {
+    setTimeout(() => document.documentElement.classList.remove('from-crt'), 700);
+  }
+
+  // returning with the browser's Back button: undo the switched-off state
+  window.addEventListener('pageshow', e => {
+    if (!e.persisted) return;
+    leaving = false;
+    tv.classList.remove('is-off');
+    document.documentElement.classList.remove('from-crt');
+    document.querySelectorAll('.crt-zoom').forEach(zoom => zoom.remove());
+  });
 
   // ---------- expandable panels ----------
   function bindToggle(btn, onChange) {

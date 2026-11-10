@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hackathons — Adarsh Ravikumar</title>
+<meta name="description" content="Hackathon log of Adarsh Ravikumar: what we built, how it went, and photos." />
+<meta name="theme-color" content="#000000" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=VT323&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="hackathons.css?v=2" />
+</head>
+<body>
+
+<a class="skip-link" href="#log">Skip to the log</a>
+
+<div class="crt" id="crt">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" data-exit><span class="logo-mark" aria-hidden="true"></span>Adarsh Ravikumar</a>
+      <div class="header-right">
+        <span class="rec" aria-hidden="true"><span class="rec-dot"></span>REC <span id="clock">00:00:00</span></span>
+        <a href="index.html#hackathons" class="exit-link" data-exit>← Portfolio</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="eyebrow">Portfolio <span class="phos">/</span> 2026 <span class="phos">/</span> Channel 03</p>
+        <h1 class="crt-title" aria-label="Hackathons"><span class="crt-title-inner" id="title" aria-hidden="true">Hackathons</span><span class="cursor" aria-hidden="true"></span></h1>
+
+        <div class="boot" id="boot" aria-hidden="true">
+          <p>&gt; Connecting to ADARSH-OS ... OK</p>
+          <p>&gt; Loading hackathon log ... OK</p>
+          <p>&gt; <span data-entries>00</span> entries found</p>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <span class="label">Entries</span>
+            <span data-entries>00</span>
+          </div>
+          <div>
+            <span class="label">Status</span>
+            <span data-status>Standing by</span>
+          </div>
+          <div>
+            <span class="label">Operator</span>
+            <span>A. Ravikumar</span>
+          </div>
+          <div>
+            <span class="label">Location</span>
+            <span>Lausanne, CH</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOG -->
+    <section class="section" id="log">
+      <div class="container grid">
+        <header class="section-head">
+          <span class="section-num">03.1</span>
+          <h2>The log</h2>
+        </header>
+        <div class="section-body">
+          <p class="log-intro">Short deadlines, a team and something working by the end. What we built, how it went and a few photos.</p>
+
+          <div class="log">
+
+            <!--
+              HOW TO ADD A HACKATHON
+              1. Copy the whole <article class="log-entry"> block below.
+              2. Paste it just above the "log-empty" line and fill it in (newest first).
+              3. Delete the "log-empty" line once you have a real entry.
+              Put photos in assets/img and use one <figure> line per photo.
+              No result or no photos? Delete that line or the "gallery" block.
+              The entry counter at the top of the page updates by itself.
+
+              <article class="log-entry">
+                <div class="log-head">
+                  <span class="log-id">Log 01</span>
+                  <span class="log-date">Nov 2026</span>
+                  <span class="log-result">1st place</span>
+                </div>
+                <h3>Hackathon name</h3>
+                <p class="log-place">City · Organiser</p>
+                <p class="log-text">What you built, with whom, and what your part was.</p>
+                <div class="gallery">
+                  <figure><button class="gallery-item" type="button"><img src="assets/img/hack-name-1.jpg" alt="Describe the photo" loading="lazy" /></button><figcaption>Caption</figcaption></figure>
+                </div>
+              </article>
+            -->
+
+            <p class="log-empty">&gt; No entries yet. First log coming soon<span class="cursor" aria-hidden="true"></span></p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXIT -->
+    <section class="section" id="exit">
+      <div class="container grid">
+        <header class="section-head">
+          <span class="section-num">03.2</span>
+          <h2>Exit</h2>
+        </header>
+        <div class="section-body">
+          <a class="exit-big" href="index.html#hackathons" data-exit>← Return to portfolio</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2026 Adarsh Ravikumar</span>
+      <span>End of transmission</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+</div>
+
+<!-- image viewer -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <div class="lightbox-bar">
+    <span class="lightbox-count" id="lightbox-count"></span>
+    <button class="lightbox-close" id="lightbox-close" type="button">Close</button>
+  </div>
+  <figure class="lightbox-figure">
+    <img id="lightbox-img" alt="" />
+    <figcaption id="lightbox-cap"></figcaption>
+  </figure>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">←</button>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Next image">→</button>
+</div>
+
+<!-- the glass: scanlines, colour mask, rolling band, curved-screen shading -->
+<div class="crt-fx" aria-hidden="true">
+  <div class="crt-scan"></div>
+  <div class="crt-mask"></div>
+  <div class="crt-roll"></div>
+  <div class="crt-vignette"></div>
+  <div class="crt-bezel"></div>
+  <div class="power-line"></div>
+</div>
+
+<script src="hackathons.js?v=1"></script>
+</body>
+</html>
