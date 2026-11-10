@@ -4,18 +4,22 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Adarsh Ravikumar — Mechanical Engineering, EPFL</title>
-<meta name="description" content="Portfolio of Adarsh Ravikumar, Mechanical Engineering student at EPFL. Drone, Mars rover, squash ball launcher, hackathons and more." />
+<meta name="description" content="Portfolio of Adarsh Ravikumar, Mechanical Engineering student at EPFL. Drone, Mars rover, squash ball launcher, hackathons, theatre and more." />
 <meta name="theme-color" content="#ffffff" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=3" />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,400&family=Inter:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css?v=5" />
 <script>
   // arriving back from the hackathons page: start behind the closed "screen" so it can open
   try {
     if (sessionStorage.getItem('crt-return')) {
       sessionStorage.removeItem('crt-return');
       document.documentElement.classList.add('from-crt');
+    }
+    if (sessionStorage.getItem('stage-return')) {
+      sessionStorage.removeItem('stage-return');
+      document.documentElement.classList.add('from-stage');
     }
   } catch (e) {}
 </script>
@@ -24,6 +28,9 @@
 
 <!-- the switch-off effect used when entering / leaving the hackathons page -->
 <div class="tv" aria-hidden="true"><span class="tv-bar tv-bar--top"></span><span class="tv-bar tv-bar--bottom"></span><span class="tv-line"></span></div>
+
+<!-- the curtain used when entering / leaving the acting page -->
+<div class="curtain" aria-hidden="true"><span class="curtain-half curtain-half--l"></span><span class="curtain-half curtain-half--r"></span></div>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -35,6 +42,7 @@
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="hackathons.html" data-section="#hackathons" data-crt-link>Hackathons</a>
+      <a href="acting.html" data-section="#acting" data-stage-link>Acting</a>
       <a href="#skills">Skills</a>
       <a href="#more">More about me</a>
       <a href="#contact">Contact</a>
@@ -307,11 +315,35 @@
     </div>
   </section>
 
-  <!-- 04 SKILLS -->
-  <section class="section" id="skills">
+  <!-- 04 ACTING -->
+  <section class="section" id="acting">
     <div class="container grid">
       <header class="section-head">
         <span class="section-num">04</span>
+        <h2>Acting</h2>
+      </header>
+      <div class="section-body">
+        <p class="hack-intro">A season on stage with PLUME, in front of 200 people. The photos are behind the curtain.</p>
+
+        <a class="stage-door" href="acting.html" data-stage-link aria-label="Open the acting page">
+          <span class="stage-door-scene">
+            <img src="assets/img/stage-2.jpg" alt="" loading="lazy" />
+            <span class="stage-door-label">PLUME · Les Insolents · 2025–26</span>
+            <span class="stage-door-bottom">
+              <span class="stage-door-title">On stage<span class="stage-door-dot">.</span></span>
+              <span class="stage-door-enter">Curtain up →</span>
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 SKILLS -->
+  <section class="section" id="skills">
+    <div class="container grid">
+      <header class="section-head">
+        <span class="section-num">05</span>
         <h2>Skills</h2>
       </header>
       <div class="section-body">
@@ -343,11 +375,11 @@
     </div>
   </section>
 
-  <!-- 05 MORE ABOUT ME -->
+  <!-- 06 MORE ABOUT ME -->
   <section class="section" id="more">
     <div class="container grid">
       <header class="section-head">
-        <span class="section-num">05</span>
+        <span class="section-num">06</span>
         <h2>More about me</h2>
       </header>
       <div class="section-body">
@@ -355,25 +387,18 @@
           <span>Want to know more about me?</span>
           <span class="toggle-icon is-large" aria-hidden="true"></span>
         </button>
-        <p class="more-hint">Theatre, partnerships and cricket.</p>
+        <p class="more-hint">Partnerships and cricket.</p>
 
         <div class="personal" id="more-panel" hidden>
           <article>
-            <span class="personal-num">05.1</span>
-            <h3>On stage</h3>
-            <p class="personal-meta">PLUME · Sep 2025 – May 2026</p>
-            <p>With PLUME I performed live in front of 200 paying audience members. That meant weeks of rehearsals with the cast and crew, lines memorised down to the pauses, and taking the director's notes one night and using them the next.</p>
-            <p>When something goes off-script on stage, you adjust on the spot and keep going.</p>
-          </article>
-          <article>
-            <span class="personal-num">05.2</span>
+            <span class="personal-num">06.1</span>
             <h3>Partnerships</h3>
             <p class="personal-meta">EPFL AI Team · Feb 2026 – now</p>
             <p>I handle partnerships for the EPFL AI Team. I find companies that care about what we build, pitch to them, negotiate sponsorship terms and keep those relationships going.</p>
             <p>A lot of the job is turning what our technical leads need into something a partner actually wants to back, whether that's funding, hardware or both.</p>
           </article>
           <article>
-            <span class="personal-num">05.3</span>
+            <span class="personal-num">06.2</span>
             <h3>Cricket</h3>
             <p class="personal-meta">Off the clock</p>
             <!-- write your cricket story here -->
@@ -384,11 +409,11 @@
     </div>
   </section>
 
-  <!-- 06 CONTACT -->
+  <!-- 07 CONTACT -->
   <section class="section" id="contact">
     <div class="container grid">
       <header class="section-head">
-        <span class="section-num">06</span>
+        <span class="section-num">07</span>
         <h2>Contact</h2>
       </header>
       <div class="section-body">
@@ -426,6 +451,6 @@
   <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Next image">→</button>
 </div>
 
-<script src="main.js?v=3"></script>
+<script src="main.js?v=4"></script>
 </body>
 </html>

@@ -76,6 +76,24 @@
     });
   });
 
+  // ---------- onto the stage: the acting page ----------
+  const curtain = document.querySelector('.curtain');
+
+  document.querySelectorAll('a[data-stage-link]').forEach(link => {
+    link.addEventListener('click', e => {
+      if (reduceMotion || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      e.preventDefault();
+      if (leaving) return;
+      leaving = true;
+      curtain.classList.add('is-closed');
+      setTimeout(() => { window.location.href = link.href; }, 720);
+    });
+  });
+
+  if (document.documentElement.classList.contains('from-stage')) {
+    setTimeout(() => document.documentElement.classList.remove('from-stage'), 1300);
+  }
+
   // back from the hackathons page: the opening animation is CSS-only, this just tidies up
   if (document.documentElement.classList.contains('from-crt')) {
     setTimeout(() => document.documentElement.classList.remove('from-crt'), 700);
@@ -86,7 +104,8 @@
     if (!e.persisted) return;
     leaving = false;
     tv.classList.remove('is-off');
-    document.documentElement.classList.remove('from-crt');
+    curtain.classList.remove('is-closed');
+    document.documentElement.classList.remove('from-crt', 'from-stage');
     document.querySelectorAll('.crt-zoom').forEach(zoom => zoom.remove());
   });
 

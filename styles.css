@@ -603,6 +603,126 @@ html.from-crt .tv-bar { animation: tv-open .5s .06s cubic-bezier(.2, .7, .2, 1) 
   100% { opacity: 0; transform: scaleX(.004); }
 }
 
+/* ---------- Acting (the door onto the stage page) ---------- */
+
+.stage-door {
+  display: block;
+  margin-top: 40px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.stage-door-scene {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: clamp(230px, 30vw, 380px);
+  padding: clamp(20px, 3vw, 36px);
+  background: #000;
+  overflow: hidden;
+}
+
+.stage-door-scene img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 64%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  filter: brightness(.72);
+  transition: filter .35s ease;
+  /* fade into the black on the left, and at the very bottom edge */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 38%), linear-gradient(to top, transparent 5%, #000 14%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0, #000 38%), linear-gradient(to top, transparent 5%, #000 14%);
+  mask-composite: intersect;
+}
+
+.stage-door:hover .stage-door-scene img,
+.stage-door:focus-visible .stage-door-scene img { filter: brightness(1.05); }
+
+.stage-door-label,
+.stage-door-bottom { position: relative; }
+
+.stage-door-label {
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #b9b3ab;
+}
+
+.stage-door-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.stage-door-title {
+  font-family: "Bodoni Moda", "Bodoni 72", Didot, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(3rem, 7.5vw, 6.2rem);
+  line-height: .9;
+  letter-spacing: -.03em;
+}
+
+.stage-door-dot { color: #f0202b; }
+
+.stage-door-enter {
+  font-size: .95rem;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, .6);
+  transition: color .15s ease, border-color .15s ease;
+}
+
+.stage-door:hover .stage-door-enter { color: #ff4a53; border-bottom-color: #ff4a53; }
+
+/* the curtain: closes before the acting page, opens on the way back */
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 210;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.curtain-half {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50.5%;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 78%, rgba(0, 0, 0, .5)),
+    repeating-linear-gradient(90deg, #6a0307 0, #b3050f 22px, #e30613 38px, #a4040d 56px, #6a0307 78px);
+  transition: transform .65s cubic-bezier(.7, 0, .25, 1);
+}
+
+.curtain-half--l { left: 0; transform: translateX(-115%); box-shadow: 14px 0 44px rgba(0, 0, 0, .6); }
+
+.curtain-half--r { right: 0; transform: translateX(115%); box-shadow: -14px 0 44px rgba(0, 0, 0, .6); }
+
+.curtain.is-closed .curtain-half { transform: none; }
+
+html.from-stage .curtain-half--l { animation: curtain-open-l 1s .12s cubic-bezier(.6, 0, .2, 1) both; }
+
+html.from-stage .curtain-half--r { animation: curtain-open-r 1s .12s cubic-bezier(.6, 0, .2, 1) both; }
+
+@keyframes curtain-open-l {
+  from { transform: none; }
+  to { transform: translateX(-115%); }
+}
+
+@keyframes curtain-open-r {
+  from { transform: none; }
+  to { transform: translateX(115%); }
+}
+
 /* ---------- Skills ---------- */
 
 .skills {
@@ -685,7 +805,7 @@ html.from-crt .tv-bar { animation: tv-open .5s .06s cubic-bezier(.2, .7, .2, 1) 
 
 .personal {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 40px 32px;
   margin-top: 48px;
 }
@@ -935,6 +1055,13 @@ html.from-crt .tv-bar { animation: tv-open .5s .06s cubic-bezier(.2, .7, .2, 1) 
   .personal,
   .contact-list { grid-template-columns: 1fr; }
 
+  .stage-door-scene img {
+    width: 100%;
+    filter: brightness(.5);
+    -webkit-mask-image: linear-gradient(to top, transparent 5%, #000 14%);
+    mask-image: linear-gradient(to top, transparent 5%, #000 14%);
+  }
+
   .education { grid-template-columns: 1fr; gap: 6px; }
 
   .education-date { text-align: left; }
@@ -958,5 +1085,6 @@ html.from-crt .tv-bar { animation: tv-open .5s .06s cubic-bezier(.2, .7, .2, 1) 
   .crt-door-cursor,
   .crt-door:hover .crt-door-title,
   .tv-bar,
-  .tv-line { animation: none !important; }
+  .tv-line,
+  .curtain-half { animation: none !important; }
 }
