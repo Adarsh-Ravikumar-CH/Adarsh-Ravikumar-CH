@@ -621,6 +621,7 @@ html.from-crt .tv-bar { animation: tv-open .5s .06s cubic-bezier(.2, .7, .2, 1) 
   min-height: clamp(230px, 30vw, 380px);
   padding: clamp(20px, 3vw, 36px);
   background: #000;
+  border-radius: 14px;
   overflow: hidden;
 }
 
