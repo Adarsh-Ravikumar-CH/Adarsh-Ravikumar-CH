@@ -438,7 +438,7 @@ p { margin: 0; }
 #rover .gallery figure:nth-child(4) img { object-position: 50% 85%; }
 #rover .gallery figure:nth-child(5) img { object-position: 50% 62%; }
 
-#drone .project-cover img { object-position: 50% 50%; }
+#drone .project-cover img { object-position: 50% 30%; }
 
 /* ---------- Hackathons (the door into the CRT page) ---------- */
 
