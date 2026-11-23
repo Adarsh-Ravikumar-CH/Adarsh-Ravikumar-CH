@@ -529,6 +529,9 @@ p { margin: 0; }
 #medicine-buddy .gallery figure:nth-child(4) img { object-position: 50% 52%; }
 #medicine-buddy .gallery figure:nth-child(6) img { object-position: 50% 32%; }
 
+#kalasag .gallery figure:nth-child(3) img,
+#kalasag .gallery figure:nth-child(4) img { object-position: 50% 62%; }
+
 /* the demo's title slide: show it whole rather than cropping through the text */
 #medicine-buddy .gallery figure:nth-child(7) .gallery-item { background: #fdf3df; }
 #medicine-buddy .gallery figure:nth-child(7) img { object-fit: contain; filter: none; }
